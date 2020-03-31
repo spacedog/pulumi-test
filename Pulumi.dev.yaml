@@ -1,0 +1,4 @@
+encryptionsalt: v1:8Jz9KVHmLqs=:v1:+H1y1iXPsyrfLt1J:z00fGwdstFkznpSmlsmkFOTu+ZdrSg==
+config:
+  aws:profile: abaranov
+  aws:region: ca-central-1

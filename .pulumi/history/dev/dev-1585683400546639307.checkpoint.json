@@ -1,0 +1,89 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "dev",
+        "latest": {
+            "manifest": {
+                "time": "2020-03-31T15:36:40.498289213-04:00",
+                "magic": "423b4922d968af38c8a083cc1cf892644c1cc8b095594691a9e70bc6e584234e",
+                "version": "v1.13.1"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:8Jz9KVHmLqs=:v1:+H1y1iXPsyrfLt1J:z00fGwdstFkznpSmlsmkFOTu+ZdrSg=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:dev::tutorial::pulumi:pulumi:Stack::tutorial-dev",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack",
+                    "outputs": {
+                        "bucket_name": "my-bucket-430cabb"
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::tutorial::pulumi:providers:aws::default_1_27_0",
+                    "custom": true,
+                    "id": "347bd700-96c9-4d7f-9d2b-9f713751dfeb",
+                    "type": "pulumi:providers:aws",
+                    "inputs": {
+                        "profile": "abaranov",
+                        "region": "ca-central-1",
+                        "version": "1.27.0"
+                    },
+                    "outputs": {
+                        "profile": "abaranov",
+                        "region": "ca-central-1",
+                        "version": "1.27.0"
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::tutorial::aws:s3/bucket:Bucket::my-bucket",
+                    "custom": true,
+                    "id": "my-bucket-430cabb",
+                    "type": "aws:s3/bucket:Bucket",
+                    "inputs": {
+                        "__defaults": [
+                            "acl",
+                            "bucket",
+                            "forceDestroy"
+                        ],
+                        "acl": "private",
+                        "bucket": "my-bucket-430cabb",
+                        "forceDestroy": false
+                    },
+                    "outputs": {
+                        "accelerationStatus": "",
+                        "acl": "private",
+                        "arn": "arn:aws:s3:::my-bucket-430cabb",
+                        "bucket": "my-bucket-430cabb",
+                        "bucketDomainName": "my-bucket-430cabb.s3.amazonaws.com",
+                        "bucketRegionalDomainName": "my-bucket-430cabb.s3.ca-central-1.amazonaws.com",
+                        "corsRules": [],
+                        "forceDestroy": false,
+                        "grants": [],
+                        "hostedZoneId": "Z1QDHH18159H29",
+                        "id": "my-bucket-430cabb",
+                        "lifecycleRules": [],
+                        "loggings": [],
+                        "objectLockConfiguration": null,
+                        "region": "ca-central-1",
+                        "replicationConfiguration": null,
+                        "requestPayer": "BucketOwner",
+                        "serverSideEncryptionConfiguration": null,
+                        "tags": {},
+                        "versioning": {
+                            "enabled": false,
+                            "mfaDelete": false
+                        },
+                        "website": null
+                    },
+                    "parent": "urn:pulumi:dev::tutorial::pulumi:pulumi:Stack::tutorial-dev",
+                    "provider": "urn:pulumi:dev::tutorial::pulumi:providers:aws::default_1_27_0::347bd700-96c9-4d7f-9d2b-9f713751dfeb"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "kind": "update",
+    "startTime": 1585683393,
+    "message": "",
+    "environment": {},
+    "config": {
+        "aws:profile": "abaranov",
+        "aws:region": "ca-central-1"
+    },
+    "result": "succeeded",
+    "endTime": 1585683400,
+    "resourceChanges": {
+        "create": 2
+    }
+}

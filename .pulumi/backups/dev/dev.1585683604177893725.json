@@ -1,0 +1,147 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "dev",
+        "latest": {
+            "manifest": {
+                "time": "2020-03-31T15:40:04.127295132-04:00",
+                "magic": "423b4922d968af38c8a083cc1cf892644c1cc8b095594691a9e70bc6e584234e",
+                "version": "v1.13.1"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:8Jz9KVHmLqs=:v1:+H1y1iXPsyrfLt1J:z00fGwdstFkznpSmlsmkFOTu+ZdrSg=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:dev::tutorial::pulumi:pulumi:Stack::tutorial-dev",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack",
+                    "outputs": {
+                        "bucket_name": "my-bucket-430cabb"
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::tutorial::pulumi:providers:aws::default_1_27_0",
+                    "custom": true,
+                    "id": "347bd700-96c9-4d7f-9d2b-9f713751dfeb",
+                    "type": "pulumi:providers:aws",
+                    "inputs": {
+                        "profile": "abaranov",
+                        "region": "ca-central-1",
+                        "version": "1.27.0"
+                    },
+                    "outputs": {
+                        "profile": "abaranov",
+                        "region": "ca-central-1",
+                        "version": "1.27.0"
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::tutorial::aws:kms/key:Key::my-sse-key",
+                    "custom": true,
+                    "id": "2fbd688d-d331-4f41-a7bd-62831ec41e32",
+                    "type": "aws:kms/key:Key",
+                    "inputs": {
+                        "__defaults": [
+                            "customerMasterKeySpec",
+                            "enableKeyRotation",
+                            "isEnabled",
+                            "keyUsage"
+                        ],
+                        "customerMasterKeySpec": "SYMMETRIC_DEFAULT",
+                        "enableKeyRotation": false,
+                        "isEnabled": true,
+                        "keyUsage": "ENCRYPT_DECRYPT"
+                    },
+                    "outputs": {
+                        "arn": "arn:aws:kms:ca-central-1:908698488443:key/2fbd688d-d331-4f41-a7bd-62831ec41e32",
+                        "customerMasterKeySpec": "SYMMETRIC_DEFAULT",
+                        "description": "",
+                        "enableKeyRotation": false,
+                        "id": "2fbd688d-d331-4f41-a7bd-62831ec41e32",
+                        "isEnabled": true,
+                        "keyId": "2fbd688d-d331-4f41-a7bd-62831ec41e32",
+                        "keyUsage": "ENCRYPT_DECRYPT",
+                        "policy": "{\"Id\":\"key-default-1\",\"Statement\":[{\"Action\":\"kms:*\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::908698488443:root\"},\"Resource\":\"*\",\"Sid\":\"Enable IAM User Permissions\"}],\"Version\":\"2012-10-17\"}",
+                        "tags": {}
+                    },
+                    "parent": "urn:pulumi:dev::tutorial::pulumi:pulumi:Stack::tutorial-dev",
+                    "provider": "urn:pulumi:dev::tutorial::pulumi:providers:aws::default_1_27_0::347bd700-96c9-4d7f-9d2b-9f713751dfeb"
+                },
+                {
+                    "urn": "urn:pulumi:dev::tutorial::aws:s3/bucket:Bucket::my-bucket",
+                    "custom": true,
+                    "id": "my-bucket-430cabb",
+                    "type": "aws:s3/bucket:Bucket",
+                    "inputs": {
+                        "__defaults": [
+                            "acl",
+                            "bucket",
+                            "forceDestroy"
+                        ],
+                        "acl": "private",
+                        "bucket": "my-bucket-430cabb",
+                        "forceDestroy": false,
+                        "serverSideEncryptionConfiguration": {
+                            "__defaults": [],
+                            "rule": {
+                                "__defaults": [],
+                                "applyServerSideEncryptionByDefault": {
+                                    "__defaults": [],
+                                    "kmsMasterKeyId": "2fbd688d-d331-4f41-a7bd-62831ec41e32",
+                                    "sseAlgorithm": "aws:kms"
+                                }
+                            }
+                        }
+                    },
+                    "outputs": {
+                        "accelerationStatus": "",
+                        "acl": "private",
+                        "arn": "arn:aws:s3:::my-bucket-430cabb",
+                        "bucket": "my-bucket-430cabb",
+                        "bucketDomainName": "my-bucket-430cabb.s3.amazonaws.com",
+                        "bucketRegionalDomainName": "my-bucket-430cabb.s3.ca-central-1.amazonaws.com",
+                        "corsRules": [],
+                        "forceDestroy": false,
+                        "grants": [],
+                        "hostedZoneId": "Z1QDHH18159H29",
+                        "id": "my-bucket-430cabb",
+                        "lifecycleRules": [],
+                        "loggings": [],
+                        "objectLockConfiguration": null,
+                        "region": "ca-central-1",
+                        "replicationConfiguration": null,
+                        "requestPayer": "BucketOwner",
+                        "serverSideEncryptionConfiguration": {
+                            "rule": {
+                                "applyServerSideEncryptionByDefault": {
+                                    "kmsMasterKeyId": "2fbd688d-d331-4f41-a7bd-62831ec41e32",
+                                    "sseAlgorithm": "aws:kms"
+                                }
+                            }
+                        },
+                        "tags": {},
+                        "versioning": {
+                            "enabled": false,
+                            "mfaDelete": false
+                        },
+                        "website": null
+                    },
+                    "parent": "urn:pulumi:dev::tutorial::pulumi:pulumi:Stack::tutorial-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::tutorial::aws:kms/key:Key::my-sse-key"
+                    ],
+                    "provider": "urn:pulumi:dev::tutorial::pulumi:providers:aws::default_1_27_0::347bd700-96c9-4d7f-9d2b-9f713751dfeb",
+                    "propertyDependencies": {
+                        "serverSideEncryptionConfiguration": [
+                            "urn:pulumi:dev::tutorial::aws:kms/key:Key::my-sse-key"
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

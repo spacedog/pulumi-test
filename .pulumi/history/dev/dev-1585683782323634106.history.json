@@ -1,0 +1,15 @@
+{
+    "kind": "destroy",
+    "startTime": 1585683757,
+    "message": "",
+    "environment": {},
+    "config": {
+        "aws:profile": "abaranov",
+        "aws:region": "ca-central-1"
+    },
+    "result": "succeeded",
+    "endTime": 1585683782,
+    "resourceChanges": {
+        "delete": 3
+    }
+}
